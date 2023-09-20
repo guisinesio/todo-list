@@ -90,6 +90,10 @@ select {
     margin-top: 1rem;
 }
 
+#cancel-edit-btn:hover {
+    color: #ffffff;
+}
+
 /* Todo Toolbar */
 
 #toolbar {
@@ -159,6 +163,7 @@ select {
     text-decoration: line-through;
     font-style: italic;
 }
+
 
 
 
