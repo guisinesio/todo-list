@@ -4,8 +4,10 @@ const todoList = document.querySelector("#todo-list");
 const editForm = document.querySelector("#edit-form");
 const editInput = document.querySelector("#edit-input");
 const cancelEditBtn = document.querySelector("#cancel-edit-btn");
+const filtro = document.querySelector("#filter");
 
 let oldInputValue;
+
 
 // Funções
 
@@ -36,7 +38,9 @@ const saveTodo = (text) => {
 
     todoInput.value = "";
     todoInput.focus();
+
 };
+
 
 const toggleForms = () => {
     editForm.classList.toggle("hide");
@@ -58,7 +62,49 @@ const updateTodo = (text) => {
 };
 
 
-// Eventos 
+function filterTasks() {
+    const filterSelect = document.querySelector("#filter-select");
+    const todos = document.querySelectorAll(".todo");
+
+    todos.forEach((todo) => {
+        const todoIsDone = todo.classList.contains("done");
+        const filterValue = filterSelect.value;
+
+        if (filterValue === "all") {
+            todo.style.display = "flex"; 
+        } else if (filterValue === "done" && todoIsDone) {
+            todo.style.display = "flex"; 
+        } else if (filterValue === "todo" && !todoIsDone) {
+            todo.style.display = "flex"; 
+        } else {
+            todo.style.display = "none"; 
+        }
+    });
+}
+
+const filterSelect = document.querySelector("#filter-select");
+
+filterTasks();
+
+
+function searchTasks() {
+    const searchInput = document.querySelector("#search-input");
+    const todos = document.querySelectorAll(".todo");
+
+    const searchText = searchInput.value.toLowerCase(); 
+
+    todos.forEach((todo) => {
+        const todoText = todo.querySelector("h3").innerText.toLowerCase(); 
+
+        if (todoText.includes(searchText)) {
+            todo.style.display = "flex"; 
+        } else {
+            todo.style.display = "none"; 
+        }
+    });
+}
+
+const searchInput = document.querySelector("#search-input");
 
 
 todoForm.addEventListener("submit", (e) => {
@@ -116,5 +162,10 @@ editForm.addEventListener("submit", (e) => {
     toggleForms();
 
 });
+
+filterSelect.addEventListener("change", filterTasks);
+
+searchInput.addEventListener("input", searchTasks);
+
 
 

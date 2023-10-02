@@ -1,5 +1,5 @@
 /* Geral */
-* {
+*{
     padding: 0;
     margin: 0;
     font-family: helvetica;
@@ -63,7 +63,7 @@ select {
     text-align: center;
     padding: 0 1rem 1rem;
     border-bottom: 1px solid #ccc;
-}
+} 
 
 /* Todo Form */
 
@@ -93,7 +93,7 @@ select {
 
 #cancel-edit-btn:hover {
     color: #ffffff;
-}
+} 
 
 /* Todo Toolbar */
 
@@ -133,7 +133,7 @@ select {
 
 #filter select {
     flex: 1;
-}
+} 
 
 /* Todo List */
 
@@ -163,7 +163,7 @@ select {
     color: #ffffff;
     text-decoration: line-through;
     font-style: italic;
-}
+} 
 
 
 
