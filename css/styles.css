@@ -8,8 +8,9 @@
 }
 
 body {
-    background-image: url("../img/pngtree-equipment-for-working-on-wooden-table-and-adjust-color-of-image-photo-image_3096104.jpg ");
+    /* background-image: url("../img/pngtree-equipment-for-working-on-wooden-table-and-adjust-color-of-image-photo-image_3096104.jpg "); */
     background-size: cover;
+    background-color: #3CB371;
 }
 
 button {
